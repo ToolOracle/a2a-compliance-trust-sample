@@ -230,8 +230,8 @@
       ]
     }
   ],
-  "security": {
-    "signing": {
+  "extensions": {
+    "tooloracle:signing": {
       "algorithm": "ES256K",
       "jwksUrl": "https://feedoracle.io/.well-known/jwks.json",
       "independentlyVerifiable": true
