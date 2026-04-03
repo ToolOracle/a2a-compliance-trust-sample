@@ -1,0 +1,250 @@
+{
+  "name": "FeedOracle",
+  "description": "DORA Operating System \u2014 Compliance evidence infrastructure for regulated financial entities. Provides continuous DORA, MiCA, and AMLR monitoring with cryptographically signed evidence, closed-loop finding management, and audit-ready reporting. Every response ES256K-signed and blockchain-anchored.",
+  "url": "https://feedoracle.io",
+  "version": "6.0.0",
+  "protocolVersions": [
+    "0.3"
+  ],
+  "provider": {
+    "organization": "FeedOracle Technologies",
+    "url": "https://feedoracle.io",
+    "location": "Bad Salzuflen, Germany"
+  },
+  "iconUrl": "https://feedoracle.io/logo.png",
+  "documentationUrl": "https://feedoracle.io/docs.html",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "supportedInterfaces": [
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "https://feedoracle.io/a2a/tasks"
+    },
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "https://mcp.feedoracle.io/mcp/",
+      "description": "MCP Streamable HTTP endpoint with 50 compliance tools"
+    }
+  ],
+  "skills": [
+    {
+      "id": "compliance_preflight",
+      "name": "Compliance Preflight Check",
+      "description": "Pre-trade compliance check for any token or action. Returns PASS/WARN/BLOCK verdict with MiCA authorization status, peg stability, reserve quality, and custody risk. Covers 105+ stablecoins.",
+      "tags": [
+        "compliance",
+        "MiCA",
+        "stablecoin",
+        "preflight",
+        "risk"
+      ],
+      "examples": [
+        "Check if USDT is compliant for EU trading",
+        "Run compliance preflight on USDC",
+        "Is RLUSD authorized under MiCA?"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "dora_readiness",
+      "name": "DORA Readiness Assessment",
+      "description": "Assess DORA compliance readiness across all articles. Returns traffic-light scores (green/amber/red) per domain: ICT risk, incident reporting, resilience testing, third-party risk, information sharing. Includes gap analysis and remediation priorities.",
+      "tags": [
+        "DORA",
+        "compliance",
+        "assessment",
+        "readiness",
+        "BaFin"
+      ],
+      "examples": [
+        "Assess our DORA readiness",
+        "What DORA gaps do we have?",
+        "Run DORA compliance check for a payment institution"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "evidence_signing",
+      "name": "Evidence Signing & Anchoring",
+      "description": "Cryptographically sign any compliance decision with ES256K. Anchor on Polygon and XRPL blockchains. Returns signed evidence bundle with content hash, signature, transaction ID, and independent verification URL.",
+      "tags": [
+        "evidence",
+        "signing",
+        "blockchain",
+        "ES256K",
+        "Polygon",
+        "XRPL",
+        "audit"
+      ],
+      "examples": [
+        "Sign this compliance decision",
+        "Create evidence bundle for our DORA assessment",
+        "Anchor this report on blockchain"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "sanctions_aml",
+      "name": "Sanctions & AML Screening",
+      "description": "Screen against EU, OFAC, and UN sanctions lists (87,000+ names). PEP checks, adverse media screening, KYC bundles, GLEIF entity lookup. Real-time watchlist updates.",
+      "tags": [
+        "AML",
+        "sanctions",
+        "KYC",
+        "PEP",
+        "OFAC",
+        "screening"
+      ],
+      "examples": [
+        "Screen 'Acme Corp' against sanctions lists",
+        "Is this entity a PEP?",
+        "Run AML check on company with LEI 5493001..."
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "stablecoin_risk",
+      "name": "Stablecoin Risk Intelligence",
+      "description": "7-signal risk scoring for 105+ stablecoins. Real-time peg deviation, reserve quality, custody assessment, MiCA authorization status, significant issuer checks, and 30-day peg history.",
+      "tags": [
+        "stablecoin",
+        "risk",
+        "peg",
+        "reserves",
+        "MiCA"
+      ],
+      "examples": [
+        "What is the risk score for USDT?",
+        "Show peg deviation history for DAI",
+        "Compare USDC vs EURC risk profiles"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "macro_intelligence",
+      "name": "Macro Intelligence",
+      "description": "Real-time macroeconomic signals from 86 FRED series and ECB indicators. Recession probability, yield curve analysis, inflation tracking, labor market health, and composite risk scores.",
+      "tags": [
+        "macro",
+        "economics",
+        "FRED",
+        "ECB",
+        "recession",
+        "inflation"
+      ],
+      "examples": [
+        "What is the current recession probability?",
+        "Show macro risk dashboard",
+        "ECB rate decision impact analysis"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "bafin_reporting",
+      "name": "BaFin Incident Reporting",
+      "description": "Generate ITS 2024/1772 compliant BaFin incident reports. 5 mandatory sections, classification engine, timeline generation, and export-ready JSON format for regulatory submission.",
+      "tags": [
+        "BaFin",
+        "incident",
+        "reporting",
+        "ITS",
+        "DORA"
+      ],
+      "examples": [
+        "Create a BaFin incident report for a ransomware attack",
+        "Classify this ICT incident",
+        "Generate incident timeline for regulator"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "contract_analysis",
+      "name": "DORA Contract Analysis",
+      "description": "Automatically check all 15 mandatory DORA Art. 30 clauses (8 standard + 7 CIF). Red-flag scoring, exit readiness assessment, subcontracting chain analysis, and concentration risk evaluation.",
+      "tags": [
+        "DORA",
+        "contract",
+        "Art30",
+        "clauses",
+        "exit",
+        "risk"
+      ],
+      "examples": [
+        "Check this cloud contract against DORA Art. 30",
+        "Assess exit readiness for our AWS agreement",
+        "Analyze subcontracting chain risks"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "security": {
+    "signing": {
+      "algorithm": "ES256K",
+      "jwksUrl": "https://feedoracle.io/.well-known/jwks.json",
+      "independentlyVerifiable": true
+    },
+    "blockchainAnchoring": {
+      "networks": [
+        "Polygon Mainnet",
+        "XRPL"
+      ],
+      "proofUrl": "https://feedoracle.io/proof/"
+    }
+  }
+}
