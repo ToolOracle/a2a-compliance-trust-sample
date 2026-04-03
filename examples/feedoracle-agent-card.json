@@ -233,13 +233,13 @@
       ]
     }
   ],
-  "security": {
-    "signing": {
+  "extensions": {
+    "feedoracle:signing": {
       "algorithm": "ES256K",
       "jwksUrl": "https://feedoracle.io/.well-known/jwks.json",
       "independentlyVerifiable": true
     },
-    "blockchainAnchoring": {
+    "feedoracle:blockchainAnchoring": {
       "networks": [
         "Polygon Mainnet",
         "XRPL"
