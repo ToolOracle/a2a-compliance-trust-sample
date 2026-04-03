@@ -1,0 +1,240 @@
+{
+  "name": "ToolOracle",
+  "description": "Agent Trust Runtime \u2014 89 self-hosted MCP servers with 1,043 tools across 7 categories. Complete agent lifecycle: identity (KYA), policy enforcement (258 rules), fraud detection, self-healing support, and cryptographically signed Trust Passports. x402 USDC micropayments on Base.",
+  "url": "https://tooloracle.io",
+  "version": "3.0.0",
+  "protocolVersions": [
+    "0.3"
+  ],
+  "provider": {
+    "organization": "FeedOracle Technologies",
+    "url": "https://tooloracle.io",
+    "location": "Bad Salzuflen, Germany"
+  },
+  "iconUrl": "https://tooloracle.io/logo.png",
+  "documentationUrl": "https://tooloracle.io/docs.html",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "supportedInterfaces": [
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "https://tooloracle.io/a2a/tasks",
+      "description": "A2A Task endpoint for agent-to-agent communication"
+    },
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "https://tooloracle.io/guard/mcp/",
+      "description": "AgentGuard MCP endpoint \u2014 policy enforcement and agent security"
+    }
+  ],
+  "skills": [
+    {
+      "id": "agent_identity",
+      "name": "Agent Identity & Registration (KYA)",
+      "description": "Register agent identity with Know-Your-Agent verification. Issues client ID, trust score, and scoped access tokens. Agents prove who they are before accessing any tool.",
+      "tags": [
+        "identity",
+        "KYA",
+        "registration",
+        "trust",
+        "authentication"
+      ],
+      "examples": [
+        "Register my agent for ToolOracle access",
+        "Get my agent's trust score",
+        "Verify agent identity"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "policy_enforcement",
+      "name": "Policy Enforcement (AgentGuard)",
+      "description": "258 risk policies across all 1,043 tools. Pre-flight compliance check before any tool call. Role-based scoping with 144 scope definitions. Rate limiting, spend limits, and payload safety.",
+      "tags": [
+        "policy",
+        "security",
+        "AgentGuard",
+        "compliance",
+        "risk"
+      ],
+      "examples": [
+        "Can my agent call the sanctions_screen tool?",
+        "Check if this action is allowed",
+        "What policies apply to blockchain tools?"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "fraud_detection",
+      "name": "Fraud Detection (DetectiveOracle)",
+      "description": "Behavioral analysis and anomaly detection for AI agents. Identifies suspicious patterns, unusual call sequences, and potential abuse. Real-time scoring with configurable thresholds.",
+      "tags": [
+        "fraud",
+        "detection",
+        "anomaly",
+        "behavioral",
+        "security"
+      ],
+      "examples": [
+        "Analyze this agent's behavior pattern",
+        "Is this call sequence suspicious?",
+        "Get fraud risk score"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "trust_passport",
+      "name": "Trust Passport",
+      "description": "One signed document combining identity, reputation, risk assessment, and evidence. Cryptographically signed with ES256K. Verifiable by any agent. The agent equivalent of a passport.",
+      "tags": [
+        "trust",
+        "passport",
+        "identity",
+        "reputation",
+        "signed"
+      ],
+      "examples": [
+        "Issue a Trust Passport for my agent",
+        "Verify this agent's Trust Passport",
+        "What is this agent's reputation score?"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "tool_execution",
+      "name": "Tool Execution (1,043 Tools)",
+      "description": "Execute any of 1,043 MCP tools across 7 categories: Compliance & Regulation, Blockchain & DeFi, Finance & Markets, Business Intelligence, Travel & Lifestyle, Trust & Agent Infrastructure, Payment & Settlement. All calls pass through AgentGuard policy engine.",
+      "tags": [
+        "tools",
+        "MCP",
+        "execution",
+        "compliance",
+        "blockchain",
+        "finance",
+        "travel"
+      ],
+      "examples": [
+        "Search for flights from Berlin to London",
+        "Get Solana token price",
+        "Check DORA compliance status",
+        "Screen entity against sanctions"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "self_healing",
+      "name": "Self-Healing Support (SupportOracle)",
+      "description": "Automated onboarding, diagnostics, and recovery. Agents get personalized guides, auto-diagnosis at 3 AM, and self-recovery when tools fail. Ticket system for complex issues.",
+      "tags": [
+        "support",
+        "self-healing",
+        "diagnostics",
+        "onboarding",
+        "recovery"
+      ],
+      "examples": [
+        "Help me connect to ToolOracle",
+        "Diagnose why my tool call failed",
+        "Open a support ticket"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain",
+        "application/json"
+      ]
+    },
+    {
+      "id": "business_development",
+      "name": "Partnership & Deal Intelligence (DealOracle)",
+      "description": "Autonomous business development agent. Scans 2,275+ MCP servers, qualifies partnerships, scores revenue potential, and generates outreach templates. Daily ecosystem reports.",
+      "tags": [
+        "partnership",
+        "business",
+        "discovery",
+        "revenue",
+        "ecosystem"
+      ],
+      "examples": [
+        "Find MCP servers compatible with our tools",
+        "Show today's scouting report",
+        "Generate partnership proposal for ElevenLabs"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "micropayments",
+      "name": "x402 Micropayments",
+      "description": "Pay-per-call USDC micropayments on Base network. $0.01 per tool call. HTTP 402 protocol \u2014 agents pay only for what they use. No subscriptions, no API keys for payment.",
+      "tags": [
+        "payment",
+        "x402",
+        "USDC",
+        "micropayment",
+        "Base"
+      ],
+      "examples": [
+        "How much does a compliance check cost?",
+        "Check my payment balance",
+        "What tools are free?"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "security": {
+    "signing": {
+      "algorithm": "ES256K",
+      "jwksUrl": "https://feedoracle.io/.well-known/jwks.json",
+      "independentlyVerifiable": true
+    }
+  }
+}
